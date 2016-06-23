@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+require('babel-preset-es2015');
 require('babel-preset-react');
 require("babel-polyfill");
 
