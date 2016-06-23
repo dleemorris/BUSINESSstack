@@ -1,18 +1,18 @@
 import React, {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
 import AppBar from 'material-ui/AppBar';
-
+import { Row, Col} from 'react-bootstrap';
 
 const Header = () => {
   return (
-    <div className="row">
-      <div className="col-md-12">
+    <Row>
+      <Col md={12}>
         <AppBar
           title="Perlur Business Stack"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

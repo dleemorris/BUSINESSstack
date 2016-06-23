@@ -2,15 +2,15 @@
 import React, {PropTypes} from 'react';
 import Header from './common/Header';
 import {connect} from 'react-redux';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <Header />
+      <Grid fluid={true}>
         {this.props.children}
-      </div>
+      </Grid>
     );
   }
 }
