@@ -18,12 +18,6 @@ elixir.config.js.babel.options.presets = [
   "es2015"
 ];
 
-/*
-var browserify = require('browserify');
-var browserifyES6Transpiler = require('browserify-es6-transpiler');
-browserify().require("./resources/js/index.js").transform(browserifyES6Transpiler).bundle();
-*/
-
 elixir(function(mix) {
   var bootstrapPath = 'node_modules/bootstrap-sass/assets';
   var jqueryPath = 'node_modules/jquery';
