@@ -1,3 +1,6 @@
 export default {
-  isLoggedIn: false
+  loginReducer: {},
+  invoiceReducer: {
+    invoices: []
+  }
 };
