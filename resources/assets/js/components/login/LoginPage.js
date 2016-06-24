@@ -27,28 +27,26 @@ class LoginPage extends React.Component {
           <Col md={3}>
             <Paper zDepth={0}>
               <TextField
-                hintText="Zadejte svůj email"
-                floatingLabelText="Váš email"
+                hintText="Enter your e-mail."
+                floatingLabelText="E-mail"
               /><br />
               <TextField
-                hintText="Zadejte své heslo"
-                floatingLabelText="Vaše heslo"
+                hintText="Enter your password."
+                floatingLabelText="Password"
                 type="password"
               /><br />
               <TextField
-                hintText="Zadejte token"
-                floatingLabelText="Váš token"
+                hintText="Enter your token PIN."
+                floatingLabelText="Token PIN"
                 type="password"
               /><br />
-              <RaisedButton label="Přihlásit" primary={true} />
+              <RaisedButton label="Log-in" primary={true} />
             </Paper>
           </Col>
         </Row>
       </div>
     );
   }
-
-
 }
 
 export default LoginPage;
