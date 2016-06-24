@@ -1,4 +1,7 @@
 var elixir = require('laravel-elixir');
+require('babel-preset-es2015');
+require('babel-preset-react');
+require("babel-polyfill");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,11 +14,17 @@ var elixir = require('laravel-elixir');
  |
  */
 
+elixir.config.js.babel.options.presets = [
+  "react",
+  "es2015"
+];
+
 elixir(function(mix) {
   var bootstrapPath = 'node_modules/bootstrap-sass/assets';
   var jqueryPath = 'node_modules/jquery';
-  mix.sass('app.scss')
+  mix.browserify('app.js')
     .copy(jqueryPath + '/dist/jquery.min.js', 'public/js')
     .copy(bootstrapPath + '/fonts', 'public/fonts')
-    .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js');
+    .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js')
+    .sass('app.scss');
 });
