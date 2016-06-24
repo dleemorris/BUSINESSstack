@@ -59,7 +59,7 @@ class Header extends React.Component {
           >
             <List>
               <ListItem onTouchTap={this.closeDrawer}><Link to="/" onlyActiveOnIndex={true}>Login Screen</Link></ListItem>
-              <ListItem onTouchTap={this.closeDrawer}><Link to="/">Sample UI collection page</Link></ListItem>
+              <ListItem onTouchTap={this.closeDrawer}><Link to="/invoice">Sample UI collection page</Link></ListItem>
             </List>
             </Drawer>
             <Snackbar
