@@ -1,13 +1,13 @@
-import React, {PropTypes} from 'react';
-import { Link, IndexLink } from 'react-router';
-import { Row, Col} from 'react-bootstrap';
+import React from 'react';
+import { Link } from 'react-router';
+import { Row, Col } from 'react-bootstrap';
 
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import Snackbar from 'material-ui/Snackbar';
 import Dialog from 'material-ui/Dialog';
 import CircularProgress from 'material-ui/CircularProgress';
-import {List, ListItem} from 'material-ui/List';
+import { List, ListItem } from 'material-ui/List';
 
 class Header extends React.Component {
 
@@ -15,15 +15,15 @@ class Header extends React.Component {
     super(props);
     this.state = {
       drawer: {
-        open: false
+        open: false,
       },
       dialog: {
-        open: false
+        open: false,
       },
       snackbar: {
         open: false,
-        message: ''
-      }
+        message: '',
+      },
     };
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.closeDrawer = this.closeDrawer.bind(this);
@@ -32,15 +32,15 @@ class Header extends React.Component {
 
 
   toggleDrawer() {
-    this.setState({drawer:{open: !this.state.drawer.open}});
+    this.setState({ drawer: { open: !this.state.drawer.open } });
   }
 
   closeDrawer() {
-    this.setState({drawer:{open:false}});
+    this.setState({ drawer: { open: false } });
   }
 
   closeSnackbar() {
-    this.setState({snackbar:{open:false}});
+    this.setState({ snackbar: { open: false } });
   }
 
   render() {
@@ -55,30 +55,34 @@ class Header extends React.Component {
           <Drawer
             docked={false}
             open={this.state.drawer.open}
-            onRequestChange={(open) => this.toggleDrawer({open})}
+            onRequestChange={(open) => this.toggleDrawer({ open })}
           >
             <List>
-              <ListItem onTouchTap={this.closeDrawer}><Link to="/" onlyActiveOnIndex={true}>Login Screen</Link></ListItem>
-              <ListItem onTouchTap={this.closeDrawer}><Link to="/">Sample UI collection page</Link></ListItem>
+              <ListItem onTouchTap={this.closeDrawer}>
+                <Link to="/" onlyActiveOnIndex>Login Screen</Link>
+              </ListItem>
+              <ListItem onTouchTap={this.closeDrawer}>
+                <Link to="/">Sample UI collection page</Link>
+              </ListItem>
             </List>
-            </Drawer>
-            <Snackbar
-              open={this.state.snackbar.open}
-              message={this.state.snackbar.message}
-              action="undo"
-              autoHideDuration={5000}
-              onRequestClose={this.closeSnackbar}
+          </Drawer>
+          <Snackbar
+            open={this.state.snackbar.open}
+            message={this.state.snackbar.message}
+            action="undo"
+            autoHideDuration={5000}
+            onRequestClose={this.closeSnackbar}
+          />
+          <Dialog
+            modal={false}
+            open={this.state.dialog.open}
+          >
+            <CircularProgress
+              style={{
+                margin: '0 auto',
+              }}
             />
-            <Dialog
-              modal={false}
-              open={this.state.dialog.open}
-            >
-              <CircularProgress
-                style={{
-                  margin: '0 auto'
-                }}
-              />
-            </Dialog>
+          </Dialog>
         </Col>
       </Row>
     );

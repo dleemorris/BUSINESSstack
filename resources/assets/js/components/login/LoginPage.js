@@ -1,19 +1,21 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import {List, ListItem} from 'material-ui/List';
-import ActionInfo from 'material-ui/svg-icons/action/info';
 import Header from '../common/Header';
 
 
 class LoginPage extends React.Component {
+  submitLogin() {
+    // there will be a method, now it is fo ESLint to pass
+  }
+
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <Row>
           <Col md={9}>
             <h1>Welcome to Perlur</h1>
@@ -40,7 +42,7 @@ class LoginPage extends React.Component {
                 floatingLabelText="Token PIN"
                 type="password"
               /><br />
-              <RaisedButton label="Log-in" primary={true} />
+              <RaisedButton label="Log-in" primary />
             </Paper>
           </Col>
         </Row>
