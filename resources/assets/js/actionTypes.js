@@ -1,11 +1,11 @@
-//login
+// login
 export const AUTH_LOGIN = 'AUTH_LOGIN';
 
-//common
+// common
 export const START_LOADING_DATA = 'START_LOADING_DATA';
 export const FINISH_LOADING_DATA = 'FINISH_LOADING_DATA';
 
-//invoice
+// invoice
 export const LOAD_INVOICES_SUCCESS = 'LOAD_INVOICES_SUCCESS';
 export const CREATE_INVOICE_SUCCESS = 'CREATE_INVOICE_SUCCESS';
 export const UPDATE_INVOICE_SUCCESS = 'UPDATE_INVOICE_SUCCESS';

@@ -1,6 +1,6 @@
 export default {
   loginReducer: {},
   invoiceReducer: {
-    invoices: []
-  }
+    invoices: [],
+  },
 };

@@ -3,7 +3,7 @@ import initialState from './initialState';
 
 const actionsMap = {
   [types.LOAD_INVOICES_SUCCESS](state, action) {
-    return Object.assign({}, {invoices: action.invoices});
+    return Object.assign({}, { invoices: action.invoices });
   },
 };
 

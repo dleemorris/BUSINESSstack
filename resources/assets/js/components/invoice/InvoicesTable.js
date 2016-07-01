@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
+import { Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn }
   from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
@@ -35,17 +35,15 @@ export default class InvoicesTable extends React.Component {
   }
 
 
-
   handleToggle(event, toggled) {
     this.setState({
       [event.target.name]: toggled,
     });
-  };
+  }
 
   handleChange(event) {
-    this.setState({height: event.target.value});
-  };
-
+    this.setState({ height: event.target.value });
+  }
 
 
   render() {
@@ -64,7 +62,7 @@ export default class InvoicesTable extends React.Component {
             enableSelectAll={this.state.enableSelectAll}
           >
             <TableRow>
-              <TableHeaderColumn colSpan="3" tooltip="Super Header" style={{textAlign: 'center'}}>
+              <TableHeaderColumn colSpan="3" tooltip="Super Header" style={{ textAlign: 'center' }}>
                 Super Header
               </TableHeaderColumn>
             </TableRow>
@@ -77,7 +75,7 @@ export default class InvoicesTable extends React.Component {
           <TableBody
             displayRowCheckbox={this.state.showCheckboxes}
           >
-            {this.props.invoices.map( (row, index) => (
+            {this.props.invoices.map((row, index) => (
               <TableRow key={index} selected={row.selected}>
                 <TableRowColumn>{row.id}</TableRowColumn>
                 <TableRowColumn>{row.title}</TableRowColumn>
@@ -94,7 +92,7 @@ export default class InvoicesTable extends React.Component {
               <TableRowColumn>User ID</TableRowColumn>
             </TableRow>
             <TableRow>
-              <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
+              <TableRowColumn colSpan="3" style={{ textAlign: 'center' }}>
                 Super Footer
               </TableRowColumn>
             </TableRow>

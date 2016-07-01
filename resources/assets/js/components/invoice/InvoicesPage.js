@@ -1,13 +1,13 @@
-import React, {PropTypes} from 'react';
-import {browserHistory} from 'react-router';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import React, { PropTypes } from 'react';
+import { browserHistory } from 'react-router';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import Header from '../common/Header';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import {List, ListItem} from 'material-ui/List';
+import { List, ListItem } from 'material-ui/List';
 import ActionInfo from 'material-ui/svg-icons/action/info';
 
 import * as invoiceActions from '../../actions/invoiceActions';
@@ -21,7 +21,7 @@ class InvoicePage extends React.Component {
 
   componentDidMount() {
     this.props.actions.loadInvoices();
-   }
+  }
 
   redirectToAddPage() {
     browserHistory.push('/invoice');
@@ -30,7 +30,7 @@ class InvoicePage extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <h1>Invoices</h1>
         <InvoicesTable invoices={this.props.invoices} />
         <RaisedButton
@@ -48,13 +48,13 @@ InvoicePage.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    invoices: state.invoiceReducer.invoices
+    invoices: state.invoiceReducer.invoices,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(invoiceActions, dispatch)
+    actions: bindActionCreators(invoiceActions, dispatch),
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(InvoicePage);
