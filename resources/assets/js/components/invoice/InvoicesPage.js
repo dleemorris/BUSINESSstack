@@ -4,16 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Header from '../common/Header';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { List, ListItem } from 'material-ui/List';
-import ActionInfo from 'material-ui/svg-icons/action/info';
 
 import * as invoiceActions from '../../actions/invoiceActions';
 import InvoicesTable from './InvoicesTable';
 
-class InvoicePage extends React.Component {
+class InvoicesPage extends React.Component {
   constructor(props) {
     super(props);
     this.redirectToAddPage = this.redirectToAddPage.bind(this);
@@ -42,11 +38,14 @@ class InvoicePage extends React.Component {
   }
 }
 
-InvoicePage.propTypes = {
+InvoicesPage.propTypes = {
   invoices: PropTypes.array.isRequired,
+  actions: PropTypes.shape({
+    loadInvoices: PropTypes.func,
+  }),
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     invoices: state.invoiceReducer.invoices,
   };
@@ -57,4 +56,4 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators(invoiceActions, dispatch),
   };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(InvoicePage);
+export default connect(mapStateToProps, mapDispatchToProps)(InvoicesPage);

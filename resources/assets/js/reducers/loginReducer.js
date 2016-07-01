@@ -2,7 +2,7 @@ import * as types from '../actionTypes';
 import initialState from './initialState';
 
 const actionsMap = {
-  [types.AUTH_LOGIN](state, action) {
+  [types.AUTH_LOGIN](state) {
     return state;
   },
 };

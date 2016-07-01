@@ -1,26 +1,18 @@
-import React from 'react';
-import { Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn }
-  from 'material-ui/Table';
-import TextField from 'material-ui/TextField';
-import Toggle from 'material-ui/Toggle';
-
-const styles = {
-  propContainer: {
-    width: 200,
-    overflow: 'hidden',
-    margin: '20px auto 0',
-  },
-  propToggleHeader: {
-    margin: '20px auto 10px',
-  },
-};
+import React, { PropTypes } from 'react';
+import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 
 export default class InvoicesTable extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log('InvoicesTable.props', this.props);
-
     this.state = {
       fixedHeader: true,
       fixedFooter: true,
@@ -62,14 +54,20 @@ export default class InvoicesTable extends React.Component {
             enableSelectAll={this.state.enableSelectAll}
           >
             <TableRow>
-              <TableHeaderColumn colSpan="3" tooltip="Super Header" style={{ textAlign: 'center' }}>
+              <TableHeaderColumn
+                colSpan="3"
+                tooltip="Super Header"
+                style={{ textAlign: 'center' }}
+              >
                 Super Header
               </TableHeaderColumn>
             </TableRow>
             <TableRow>
               <TableHeaderColumn tooltip="The ID">ID</TableHeaderColumn>
               <TableHeaderColumn tooltip="The Name">Title</TableHeaderColumn>
-              <TableHeaderColumn tooltip="The Status">User ID</TableHeaderColumn>
+              <TableHeaderColumn tooltip="The Status">
+                User ID
+              </TableHeaderColumn>
             </TableRow>
           </TableHeader>
           <TableBody
@@ -102,3 +100,7 @@ export default class InvoicesTable extends React.Component {
     );
   }
 }
+
+InvoicesTable.propTypes = {
+  invoices: PropTypes.array.isRequired,
+};
