@@ -1,22 +1,30 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production"
+    "prod": "gulp --production",
+    "build": "webpack",
+    "dev": "webpack --inline --colors --progress"
   },
   "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "~6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "bootstrap-sass": "^3.0.0",
+    "eslint": "~2.13.1",
+    "eslint-config-airbnb": "~9.0.1",
+    "eslint-loader": "^1.4.1",
+    "eslint-plugin-import": "~1.9.2",
+    "eslint-plugin-jsx-a11y": "~1.5.3",
+    "eslint-plugin-react": "~5.2.2",
     "gulp": "^3.9.1",
     "jquery": "^2.2.3",
-    "bootstrap-sass": "^3.0.0",
     "laravel-elixir": "^5.0.0",
     "laravel-elixir-babel": "^0.2.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-es2015": "~6.9.0",
+    "laravel-elixir-webpack": "^1.0.1",
+    "laravel-elixir-webpack-advanced": "^0.3.9-2",
     "lodash.clonedeep": "~4.3.2",
-    "eslint-plugin-react": "~5.2.2",
-    "eslint-plugin-jsx-a11y": "~1.5.3",
-    "eslint": "~2.13.1",
-    "eslint-plugin-import": "~1.9.2",
-    "eslint-config-airbnb": "~9.0.1"
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
   },
   "dependencies": {
     "axios": "^0.12.0",
